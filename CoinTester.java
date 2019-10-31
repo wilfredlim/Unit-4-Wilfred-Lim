@@ -7,22 +7,22 @@ public class CoinTester{
     Coin myCoin = new Coin();
     Coin yourCoin = new Coin();
 
-    System.out.println("My coin is "+myCoin.toString());
+    System.out.println("My coin is "+myCoin);
     System.out.println("Your coin is "+yourCoin.toString());
 
-    int headCounter = 0;
-    int tailCounter = 0;
-    for (int i = 1; i < 6; i++){
+    double headCounter = 0;
+    double tailCounter = 0;
+    for (int i = 1; i < 11; i++){
       Coin testCoin = new Coin();
       System.out.println(i+" flip = "+ testCoin.toString());
-      if (testCoin == HEADS){
+      if (testCoin.isHeads()){
         headCounter++;
       }
-      if (testCoin == TAILS){
+      else {
         tailCounter++;
       }
     }
-    System.out.println("Number of heads flipped = "+headCounter);
-    System.out.println("Number of tails flipped = "+tailCounter);
+    System.out.println("Number of heads flipped = "+(headCounter/10)*100+"%");
+    System.out.println("Number of tails flipped = "+(tailCounter/10)*100+"%");
   }
 }

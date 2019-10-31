@@ -19,7 +19,23 @@ public class Coin{
 
   /*
   This is the section of the class containing the methods (behaviors) of a Coin.
+  */
 
+  /*
+   The accessor method for the face vairable (a getter)
+  */
+  public int getFace(){
+    return face;
+  }
+
+  /*
+  The mutator method for the face vairable (a setter)
+  */
+  public void setFace(int newFace){
+    face = newFace
+  }
+
+  /*
   The flip method assigns a randomly chosen value to the face of the Coin.
   */
   public void flip(){
