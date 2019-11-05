@@ -67,7 +67,7 @@ public class Car{
     public String toString(){
     String result = "";
     result += make +" "+ model +"\n";
-    result += "Gas Milage: "+mpg+" mpg " + "Tank Size:"+tank+" g\n";
+    result += "Gas Milage: "+mpg+" mpg " + "Tank Size: "+tank+" g\n";
     result += "Current Fuel: "+ fuel+ "g";
     return result;
 
