@@ -57,8 +57,8 @@ public class Car{
   The mutator method for the filling up fuel (a setter)
   */
 
-  public void setFuel(double newFuel){
-    fuel = newFuel;
+  public void addFuel(double newFuel){
+    fuel = fuel + newFuel;
 }
 
   /*
@@ -70,6 +70,9 @@ public class Car{
     result += "Gas Milage: "+mpg+" mpg " + "Tank Size: "+tank+" g\n";
     result += "Current Fuel: "+ fuel+ "g";
     return result;
-
+  }
+  public void drive(double distance){
+    double usedFuel = distance/mpg;
+    fuel = fuel - usedFuel;
   }
 }

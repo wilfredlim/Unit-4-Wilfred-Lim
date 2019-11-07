@@ -4,8 +4,7 @@ public class BankAccount{
   double balance;
   double interestRate;
   double minimumBal;
-  int accountNum ; //usually 10-12 digits long
-  int routingNum ; //9 digits
+  String accountNum = Integer.toString((int)(Math.random()*100000))+ Integer.toString((int)(Math.random()*1000000)) ; //usually 10-12 digits long
 
 
   public BankAccount(String userBank, String userAccountType, double userIntRate, double userMinBal, double startBal){
@@ -26,22 +25,26 @@ public class BankAccount{
 
   public void withdrawal(double userWithdrawal){
     if((balance - userWithdrawal) > minimumBal){
-      balance = Math.round((balance - userWithdrawal)*100)/100;
+      balance =(Math.round((balance - userWithdrawal)*100.0)/100.0);
     }
   }
 
   public void deposit(double userDeposit){
-    balance = Math.round((balance + userDeposit));
+    balance =(Math.round((balance + userDeposit)*100.0)/100.0);
   }
 
   public void transfer(BankAccount otherAccount, double userTransfer){
     if((balance - userTransfer) > minimumBal){
-      balance = (Math.round((balance - userTransfer)*100))/100;
+      balance =(Math.round((balance - userTransfer)*100.0))/100.0;
     }
     otherAccount.deposit(userTransfer);
   }
 
   public void interest(double months){
-    balance = Math.round((balance * Math.pow((1+(interestRate/100)/12), months))*100)/100;
+    balance = Math.round((balance * Math.pow((1+(interestRate/100)/12), months))*100.0)/100.0;
+  }
+
+  public String getActNum(){
+    return accountNum;
   }
 }

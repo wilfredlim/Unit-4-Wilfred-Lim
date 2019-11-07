@@ -9,16 +9,20 @@ public class BankAccountClient{
   public static void main(String[] args){
     BankAccount fredAcc = new BankAccount("BoFA", "Checking", .09, 0.0, 5.0);
     BankAccount gregAcc = new BankAccount("BoFA", "Checking", .09, 0.0, 5.0);
+
+    System.out.println("Your account number is " + fredAcc.getActNum());
+
     fredAcc.deposit(12.12);
-    System.out.println("Account balance after deposit: " + fredAcc.getBal());
+    System.out.println("Account balance after deposit: $" + fredAcc.getBal());
 
     fredAcc.withdrawal(5);
-    System.out.println("Account balance after withdrawal: " + fredAcc.getBal());
+    System.out.println("Account balance after withdrawal: $" + fredAcc.getBal());
 
     fredAcc.transfer(gregAcc, 1.2);
-    System.out.println("Account balance after deposit: " + fredAcc.getBal());
+    System.out.println("Account balance after transfer: $" + fredAcc.getBal());
 
     fredAcc.interest(240); //time
-    System.out.println("Account balance after interest: " + fredAcc.getBal());
+    System.out.println("Account balance after interest: $" + fredAcc.getBal());
+
   }
 }
